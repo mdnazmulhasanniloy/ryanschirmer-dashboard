@@ -11,7 +11,8 @@ import { successToast } from "@/utils/customToast";
 import { LayoutDashboard } from "lucide-react";
 import { BookImage } from "lucide-react";
 import Image from "next/image";
-import logo from "../../../assets/logos/logo.png"
+import logo from "../../../assets/logos/logo.png";
+import { Shapes } from "lucide-react";
 const SidebarContainer = ({ collapsed }) => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -37,6 +38,11 @@ const SidebarContainer = ({ collapsed }) => {
       key: "account-details",
       icon: <Users2 size={21} strokeWidth={2} />,
       label: <Link href={"/admin/account-details"}>Account Details</Link>,
+    },
+    {
+      key: "categories",
+      icon: <Shapes size={21} strokeWidth={2} />,
+      label: <Link href={"/admin/categories"}>Categories</Link>,
     },
     {
       key: "banner",
@@ -74,7 +80,7 @@ const SidebarContainer = ({ collapsed }) => {
       }}
       className="scroll-hide !shadow-xl"
     >
-      <div className="flex flex-col items-center justify-center mb-6">
+      <div className="mb-6 flex flex-col items-center justify-center">
         <Link href={"/"}>
           <Image
             src={logo}
